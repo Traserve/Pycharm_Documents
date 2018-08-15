@@ -37,4 +37,8 @@ print(df.columns)  # 打印列名
 
 # print(df.T) # 数据转置
 
-print(df.sort_values(by='tip'))  # 按tip列升序排序
+# print(df.sort_values(by='tip'))  # 按tip列升序排序
+
+# group = df.groupby('day') # 按day这一列进行分组
+# print(group.first()) # 打印每一组的第一行数据
+# print(group.last()) # 打印每一组的最后一行数据
