@@ -1,6 +1,8 @@
 import pandas as pd
 import pymysql
 
+# https://blog.csdn.net/qq_37176126/article/details/72824106
+
 # mysql_cn= pymysql.connect(host='localhost', port=3306,user='wht_dev', passwd='wht_dev', db='wht_dev')
 # df = pd.read_sql('select * from hap_demo_b;', con=mysql_cn)
 # print(df)

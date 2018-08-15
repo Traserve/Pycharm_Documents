@@ -1,5 +1,8 @@
 import pandas as pd
 
+# https://www.cnblogs.com/zzhzhao/p/5269217.html
+# https://blog.csdn.net/Flying_sfeng/article/details/58596978
+
 df = pd.read_csv('D:\\PycharmProjects\\tips.csv')
 # print(df.head()) # 打印数据前5行
 # print(df.tail()) # 打印数据后5行
@@ -17,3 +20,10 @@ print(df.columns)  # 打印列名
 # print(df.drop(columns=['total_bill', 'tip'], axis = 1)) # 舍弃两列数据
 # print(df.drop([0, 1], axis = 0)) # 舍弃两行数据
 # print(df.drop([0, 1])) # 舍弃两行数据
+
+# print(df.shape) # 打印维度
+# print(df.iloc[3]) # 打印第3行
+# print(df.iloc[2:5]) # 选取第2到第3行
+# print(df.iloc[0,1]) # 选取第0行1列的元素
+
+print(df.tip > 8)
