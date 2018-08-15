@@ -1,5 +1,6 @@
 import pandas as pd
 import pymysql
+#http://mirrors.aliyun.com/pypi/simple
 # data_url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv" #填写url读取
 df = pd.read_csv('E:\\Pycharm_Documents\\tips.csv')
 print(df)
