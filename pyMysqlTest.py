@@ -6,7 +6,6 @@ import pymysql
 # print(df)
 # mysql_cn.close()
 
-
 db = pymysql.connect(host='localhost', port=3306, user='wht_dev', passwd='wht_dev', db='wht_dev')
 # df = pd.read_csv('D:\\PycharmProjects\\tips.csv')
 cur = db.cursor()
