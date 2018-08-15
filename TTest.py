@@ -1,6 +1,7 @@
 import pandas as pd
 from scipy.stats import ttest_ind
 
+# 独立样本t检验
 IS_t_test = pd.read_excel('seaborn-data\\t_test.xlsx')
 Group1 = IS_t_test[IS_t_test['group'] == 1]['data']
 Group2 = IS_t_test[IS_t_test['group'] == 2]['data']
