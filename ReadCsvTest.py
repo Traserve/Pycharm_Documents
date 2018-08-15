@@ -3,7 +3,7 @@ import pandas as pd
 # https://www.cnblogs.com/zzhzhao/p/5269217.html
 # https://blog.csdn.net/Flying_sfeng/article/details/58596978
 
-df = pd.read_csv('D:\\PycharmProjects\\tips.csv')
+df = pd.read_csv('seaborn-data\\tips.csv')
 # print(df.head()) # 打印数据前5行
 # print(df.tail()) # 打印数据后5行
 
@@ -23,7 +23,18 @@ print(df.columns)  # 打印列名
 
 # print(df.shape) # 打印维度
 # print(df.iloc[3]) # 打印第3行
-# print(df.iloc[2:5]) # 选取第2到第3行
+# print(df.iloc[2:5]) # 选取第2到第4行
 # print(df.iloc[0,1]) # 选取第0行1列的元素
 
-print(df.tip > 8)
+# print(df[df.tip > 8]) # 筛选出小费大于$8的数据
+# 数据筛选同样可以用”或“和”且“作为筛选条件
+# print(df[(df.tip>7) | (df.total_bill>50)]) # 筛选出小费大于$7或总账单大于$50的数据
+# print(df[(df.tip>7) & (df.total_bill>50)]) # 筛选出小费大于$7且总账单大于$50的数据
+# 加入筛选条件
+# print(df[['day','time']][(df.tip>7)|(df.total_bill>50)])
+
+# print(df.describe()) # 统计描述
+
+# print(df.T) # 数据转置
+
+print(df.sort_values(by='tip'))  # 按tip列升序排序
