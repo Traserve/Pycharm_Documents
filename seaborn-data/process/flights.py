@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 def main():
     flights = pd.read_csv("/Users/mwaskom/Desktop/AirPassengers.csv")
     flights["year"] = np.floor(flights.time).astype(int)
@@ -23,7 +22,7 @@ def main():
     flights["month"] = flights.month.map(month_number_to_name)
     flights["passengers"] = flights["AirPassengers"]
     flights = flights.drop(["AirPassengers", "time", "Unnamed: 0"], axis=1)
-    flights.to_csv("flights.csv", index=False)
+    # flights.to_csv("flights.csv", index=False)
 
 
 if __name__ == "__main__":
