@@ -1,9 +1,7 @@
 import os
 import pandas as pd
 
-
 # 值替换，列删除
-
 def main():
     df = pd.read_csv(os.path.abspath('..') + "/raw/exercise.csv")
     df["diet"] = df.diet.map({1: "low fat", 2: "no fat"})
