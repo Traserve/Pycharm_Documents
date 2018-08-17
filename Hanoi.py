@@ -1,3 +1,4 @@
+# 汉诺塔
 def hanoi(n, src, dst, mid):
     global count;
     if n == 1:

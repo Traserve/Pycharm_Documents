@@ -1,5 +1,6 @@
 import turtle
-import time
+
+# 彩色螺旋线
 turtle.pensize(2)
 turtle.bgcolor("black")
 colors = ["red", "yellow",'purple','blue']

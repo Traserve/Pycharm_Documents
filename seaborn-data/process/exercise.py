@@ -1,9 +1,8 @@
 import os
-
 import pandas as pd
 
 
-# 根据条件对相应的数值进行替换，并删除相应列
+# 值替换，列删除
 
 def main():
     df = pd.read_csv(os.path.abspath('..') + "/raw/exercise.csv")
