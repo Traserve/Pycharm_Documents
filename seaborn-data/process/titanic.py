@@ -1,9 +1,11 @@
+import os
+
 import numpy as np
 import pandas as pd
 
 
 def main():
-    raw_data = "raw/titanic.csv"
+    raw_data = os.path.abspath('..') + "/raw/titanic.csv"
     df = pd.read_csv(raw_data)
 
     df["class"] = df.pclass.map({1: "First", 2: "Second", 3: "Third"})
@@ -15,7 +17,8 @@ def main():
     df["alone"] = ~(df.parch + df.sibsp).astype(bool)
     df = df.drop(["name", "ticket", "cabin"], axis=1)
 
-    df.to_csv("titanic.csv", index=False)
+    print(df)
+    # df.to_csv("titanic.csv", index=False)
 
 
 def woman_child_or_man(passenger):

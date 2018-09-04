@@ -1,4 +1,3 @@
-# 摄氏度、华氏度转换
 TempStr = input("请输入带有符号的温度：")
 print(eval(TempStr[0:-1]))
 if TempStr[-1] in ['F' , 'f']:

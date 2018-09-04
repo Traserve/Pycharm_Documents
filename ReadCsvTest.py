@@ -1,8 +1,10 @@
 import pandas as pd
 
-# Python读取csv文件操作
 # https://www.cnblogs.com/zzhzhao/p/5269217.html
 # https://blog.csdn.net/Flying_sfeng/article/details/58596978
+
+# data_url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv" #填写url读取
+# df = pd.read_csv(data_url)
 
 df = pd.read_csv('seaborn-data\\tips.csv')
 # print(df.head()) # 打印数据前5行

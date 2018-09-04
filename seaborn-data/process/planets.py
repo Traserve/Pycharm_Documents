@@ -1,5 +1,7 @@
-import pandas as pd
 import os
+
+import pandas as pd
+
 
 def main():
     raw_data = os.path.abspath('..') + "/raw/planets.csv"

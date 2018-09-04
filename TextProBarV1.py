@@ -1,6 +1,4 @@
 import time
-
-# 绘制进度条
 scale = 50
 print("执行开始".center(scale//2, '-'))
 start = time.perf_counter()

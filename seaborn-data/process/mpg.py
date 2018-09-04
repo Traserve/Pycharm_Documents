@@ -1,7 +1,7 @@
-import pandas as pd
 import os
 
-# 值替换
+import pandas as pd
+
 if __name__ == "__main__":
     raw_data = os.path.abspath('..') + "/raw/mpg.csv"
     df = pd.read_csv(raw_data, na_values="?")

@@ -1,7 +1,6 @@
 import pandas as pd
 import pymysql
 
-# Python连接Mysql数据库操作
 # https://blog.csdn.net/qq_37176126/article/details/72824106
 
 # mysql_cn= pymysql.connect(host='localhost', port=3306,user='wht_dev', passwd='wht_dev', db='wht_dev')
