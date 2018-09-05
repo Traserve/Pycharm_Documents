@@ -1,5 +1,11 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+# print(pd.get_option('display.width'))
+# print(pd.get_option('display.max_columns'))
+pd.set_option('display.width', 500)  # 默认80
+pd.set_option('display.max_columns', 50)
 
 # 分组运算
 # "split-apply-combine"（拆分－应用－合并）。
@@ -9,10 +15,10 @@ import numpy as np
 # 最后，所有这些函数的执行结果会被合并（combine）到最终的结果对象中。结果对象的形式一般取决于数据上所执行的操作
 # 例如分组求和：根据相应条件对原数据进行分组(split)，应用求和函数sum，最后合并称一条数据
 
-df = pd.DataFrame({'key1' : ['a', 'a', 'b', 'b', 'a'],
-                   'key2' : ['one', 'two', 'one', 'two', 'one'],
-                   'data1' : np.random.randn(5),
-                   'data2' : np.random.randn(5)})
+df = pd.DataFrame({'key1': ['a', 'a', 'b', 'b', 'a'],
+                   'key2': ['one', 'two', 'one', 'two', 'one'],
+                   'data1': np.random.randn(5),
+                   'data2': np.random.randn(5)})
 # grouped = df['data1'].groupby(df['key1'])
 # # print(grouped.mean())
 # means = df['data1'].groupby([df['key1'], df['key2']]).mean()
@@ -177,3 +183,30 @@ df = pd.DataFrame({'category': ['a', 'a', 'a', 'a',
 # grouped = df.groupby('category')
 # get_wavg = lambda g: np.average(g['data'], weights=g['weights'])
 # print(grouped.apply(get_wavg))
+
+def regress(data, yvar, xvars):
+    Y = data[yvar]
+    X = data[xvars]
+    X['intercept'] = 1.
+    result = sm.OLS(Y, X).fit()
+    return result.params
+
+# pt1 = tips.pivot_table(index=['day', 'smoker'])
+# print(pt1)
+
+# pt2 = tips.pivot_table(['tip_pct', 'size'], index=['time', 'day'], columns='smoker')
+# print(pt2)
+#
+# print('\033[31m控制台显示红色字体\033[0m')
+# 传入margins=True添加分项小计。这将会添加标签为All的行和列，其值对应于单个等级中所有数据的分组统计
+# pt3 = tips.pivot_table(['tip_pct', 'size'], index=['time', 'day'], columns='smoker', margins=True)
+# print(pt3)
+# pt4 = tips.pivot_table('tip_pct', index=['time', 'size', 'smoker'], columns='day', aggfunc='mean', fill_value=0)
+# print(pt4)
+
+# 交叉表（cross-tabulation，简称crosstab）是一种用于计算分组频率的特殊透视表
+# ct = pd.crosstab([tips.time, tips.day], tips.smoker, margins=True)
+# print(ct)
+#
+# pt5 = tips.pivot_table(['tip_pct', 'size'], index=['time', 'day'], columns='smoker', margins=True)
+# print(pt5)
